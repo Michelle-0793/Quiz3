@@ -1,5 +1,5 @@
 #ESTRUCTURA DE LA BASE DATOS
-
+from django.utils import timezone
 from django.db import models
 
 
@@ -13,8 +13,6 @@ class Usuario(models.Model):
          return str(self.Nombre)
 
 
-
-"""""
 class Receta(models.Model):
     Nombre_Receta = models.CharField(max_length=100)
     Descripcion = models.CharField(max_length=1000)
@@ -35,8 +33,7 @@ class Categoria(models.Model):
          return str(self.Nombre_Categoria)  
 
 
-
-class Comentarios(models.Model):
+class Comentario(models.Model):
 
     Comentario= models.CharField(max_length=100)
     fecha_creacion = models.DateTimeField(default=timezone.now)
@@ -48,5 +45,5 @@ class Comentarios(models.Model):
 
 
 
-"""
+
               

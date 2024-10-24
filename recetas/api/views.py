@@ -1,11 +1,15 @@
 from rest_framework import generics
 from django.shortcuts import render
+
 from .models import Usuario
-#from .models import Receta
-#from .models import Categoria
-#from .models import Comentario
+from .models import Receta
+from .models import Categoria
+from .models import Comentario
+
 from .serializers import UsuarioSerializer
-#from .serializers import RecetaSerializer
+from .serializers import RecetaSerializer
+from .serializers import CategoriaSerializer
+from .serializers import ComentarioSerializer
 
 
 
@@ -18,11 +22,8 @@ class UsuarioListCreate(generics.ListCreateAPIView):
 class UsuarioDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Usuario.objects.all()
     serializer_class = UsuarioSerializer
+    
 
-    
-   
-    
-""" 
 #Métodos recetas
 class RecetaListCreate(generics.ListCreateAPIView):
     queryset = Receta.objects.all()
@@ -31,7 +32,9 @@ class RecetaListCreate(generics.ListCreateAPIView):
 
 class RecetaDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Receta.objects.all()
-    serializer_class = RecetaSerializer   
+    serializer_class = RecetaSerializer
+
+    
        
 #Métodos categorias
 
@@ -46,7 +49,6 @@ class CategoriaDetail(generics.RetrieveUpdateDestroyAPIView):
     
 
 #Métodos comentarios
-
 class ComentarioListCreate(generics.ListCreateAPIView):
     queryset = Comentario.objects.all()
     serializer_class = ComentarioSerializer
@@ -56,4 +58,3 @@ class ComentarioDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Comentario.objects.all()
     serializer_class = ComentarioSerializer
 
-"""
