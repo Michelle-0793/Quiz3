@@ -11,17 +11,18 @@ from .serializers import UsuarioSerializer
 
 #Métodos usuarios
 class UsuarioListCreate(generics.ListCreateAPIView):
-    queryset = Usuario.objects.all()
-    serializer_class = UsuarioSerializer
+    queryset = Usuario.objects.all() #Define el conjunto de datos que se utilizarán (todas las recetas)
+    serializer_class = UsuarioSerializer #Especifica el serializer para convertir los datos a JSON
 
 
 class UsuarioDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Usuario.objects.all()
     serializer_class = UsuarioSerializer
+
     
    
     
-"""
+""" 
 #Métodos recetas
 class RecetaListCreate(generics.ListCreateAPIView):
     queryset = Receta.objects.all()
@@ -30,8 +31,8 @@ class RecetaListCreate(generics.ListCreateAPIView):
 
 class RecetaDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Receta.objects.all()
-    serializer_class = RecetaSerializer     
-    
+    serializer_class = RecetaSerializer   
+       
 #Métodos categorias
 
 class CategoriaListCreate(generics.ListCreateAPIView):
